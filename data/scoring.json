@@ -1,0 +1,14 @@
+{
+  "default": {
+    "Yes": 1,
+    "No": 0,
+    "Consistent": 1,
+    "Inconsistent": 0,
+    "Regularly": 1,
+    "Occasionally": 0.5,
+    "Rarely": 0,
+    "In progress": 0.5
+  }
+}
+
+

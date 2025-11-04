@@ -1,0 +1,67 @@
+[
+  {
+    "id": "ux-strategy",
+    "title": "UX Strategy & Governance",
+    "description": "Alignment, leadership support, and governance models that make UX repeatable and effective.",
+    "labels": ["designer", "developer", "producer"],
+    "items": [
+      { "id": "ux-strategy-1", "title": "Is there a documented UX strategy aligned with your business and regulatory objectives?", "options": ["Yes", "No"] },
+      { "id": "ux-strategy-2", "title": "Does leadership actively champion UX as a driver of patient/HCP engagement and compliance?", "options": ["Yes", "No"] },
+      { "id": "ux-strategy-3", "title": "Are UX goals tied to measurable business or clinical KPIs (e.g., adherence, satisfaction, workflow efficiency)?", "options": ["Yes", "No"] },
+      { "id": "ux-strategy-4", "title": "Is there a dedicated UX governance model (roles, decision-making, compliance reviews)?", "options": ["Yes", "No"] },
+      { "id": "ux-strategy-5", "title": "How consistently are UX standards applied across markets, brands, or therapeutic areas?", "options": ["Consistent", "Inconsistent"] }
+    ]
+  },
+  {
+    "id": "research-understanding",
+    "title": "Research & Understanding",
+    "description": "Ways of learning from patients, caregivers and HCPs, and how insights travel across teams.",
+    "labels": ["designer", "producer"],
+    "items": [
+      { "id": "research-1", "title": "Do you regularly conduct user research with patients, caregivers, and/or HCPs to inform design decisions?", "options": ["Yes", "No"] },
+      { "id": "research-2", "title": "Are research findings documented and shared across teams (marketing, medical, compliance)?", "options": ["Yes", "No"] },
+      { "id": "research-3", "title": "How frequently are personas and journey maps updated based on new data?", "options": ["Regularly", "Occasionally", "Rarely"] },
+      { "id": "research-4", "title": "Do you test content and interfaces for health literacy, accessibility, and comprehension?", "options": ["Yes", "No"] },
+      { "id": "research-5", "title": "Are patient and HCP insights integrated early in project planning, not post-launch?", "options": ["Yes", "No"] }
+    ]
+  },
+  {
+    "id": "experience-accessibility",
+    "title": "Experience Design & Accessibility",
+    "description": "Design standards and accessibility practices tailored for healthcare-grade experiences.",
+    "labels": ["designer", "developer"],
+    "items": [
+      { "id": "exp-1", "title": "Do you have UX/UI design standards tailored for healthcare and regulatory environments?", "options": ["Yes", "No"] },
+      { "id": "exp-2", "title": "Is your website WCAG 2.1 AA compliant, and are accessibility audits performed regularly?", "options": ["Yes", "No", "In progress"] },
+      { "id": "exp-3", "title": "Are interactive tools (e.g., dosage calculators, trial finders) designed with user safety and clarity in mind?", "options": ["Yes", "No"] },
+      { "id": "exp-4", "title": "Is there a consistent design system used across digital touchpoints (web, apps, portals)?", "options": ["Yes", "No"] },
+      { "id": "exp-5", "title": "Are content hierarchies and navigation tailored to different user types (HCP, patient, payer)?", "options": ["Yes", "No"] }
+    ]
+  },
+  {
+    "id": "regulatory-compliance",
+    "title": "Regulatory & Compliance Integration",
+    "description": "Embedding FDA/EMA/HIPAA considerations and review partners into the UX process early.",
+    "labels": ["developer", "producer"],
+    "items": [
+      { "id": "reg-1", "title": "Is there a clear process to ensure UX design complies with FDA, EMA, and HIPAA regulations?", "options": ["Yes", "No"] },
+      { "id": "reg-2", "title": "Are legal and medical reviewers integrated into UX workflows early (not just at the end)?", "options": ["Yes", "No"] },
+      { "id": "reg-3", "title": "Do digital assets include clear disclaimers, citations, and adverse event reporting links?", "options": ["Yes", "No"] },
+      { "id": "reg-4", "title": "Is there a documented audit trail for UX decisions related to compliance?", "options": ["Yes", "No"] },
+      { "id": "reg-5", "title": "Are UX designers trained in regulatory best practices for healthcare content and interfaces?", "options": ["Yes", "No"] }
+    ]
+  },
+  {
+    "id": "measurement-optimisation",
+    "title": "Measurement & Optimisation",
+    "description": "Measuring engagement and closing the loop from analytics to UX improvements and outcomes.",
+    "labels": ["developer", "producer"],
+    "items": [
+      { "id": "measure-1", "title": "Are UX and engagement metrics (e.g., completion rates, dwell time, task success) actively tracked?", "options": ["Yes", "No"] },
+      { "id": "measure-2", "title": "Do you run A/B or multivariate testing to optimize conversions or engagement?", "options": ["Yes", "No"] },
+      { "id": "measure-3", "title": "Are you collecting feedback from end-users post-launch (e.g., satisfaction surveys?)", "options": ["Yes", "No"] },
+      { "id": "measure-4", "title": "Is there a continuous improvement loop connecting analytics → UX design → business outcomes?", "options": ["Yes", "No"] },
+      { "id": "measure-5", "title": "Do UX insights inform future product strategy and innovation roadmaps?", "options": ["Yes", "No"] }
+    ]
+  }
+]

@@ -1,0 +1,21 @@
+# Node
+node_modules/
+.npm-debug.log*
+yarn.lock
+package-lock.json
+
+# Env/OS
+.env
+.DS_Store
+
+# Logs
+logs/
+*.log
+
+# Data (runtime submissions)
+data/submissions.json
+
+# Build/artifacts
+/dist/
+/.cache/
+

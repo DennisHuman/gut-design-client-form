@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Client Catch | GUT</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo" aria-label="Company logo placeholder">GUT Design</div>
+      <nav class="header-nav">
+        <a class="nav-link" href="/admin.html" aria-label="Admin dashboard">Dashboard</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="intro">
+      <h1 class="title">Client Catch</h1>
+      <p class="subtitle">Answer a few quick questions to help us tailor the right approach.</p>
+    </section>
+
+    <div id="stepbar" class="stepbar" aria-live="polite"></div>
+
+    <section id="personaSection" class="persona" aria-label="Who are you?"></section>
+
+    <section id="accordion" class="accordion" aria-label="Questionnaire accordion"></section>
+
+    <section id="review" class="review" hidden>
+      <h2 class="title" style="margin-top:0;">Review & Submit</h2>
+      <div id="reviewBody" class="review-body"></div>
+    </section>
+
+    <div class="step-controls">
+      <button id="backBtn" class="button outline" type="button">Back</button>
+      <button id="nextBtn" class="button" type="button">Next</button>
+    </div>
+
+    <section class="submit-section">
+      <form id="submitForm" class="submit-form" novalidate>
+        <label for="email" class="label">Your email</label>
+        <input id="email" name="email" type="email" class="input" placeholder="you@company.com" required />
+        <button type="submit" class="button">Submit</button>
+        <p id="formMessage" class="form-message" role="status" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div>Contact: <a href="mailto:hello@gut.agency">hello@gut.agency</a></div>
+      <div><a href="/admin.html">Mini Dashboard</a></div>
+    </div>
+  </footer>
+
+  <div id="mediaModal" class="modal" aria-hidden="true" role="dialog" aria-label="Case study">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-content" role="document">
+      <button class="modal-close" data-close-modal aria-label="Close">×</button>
+      <div id="modalBody" class="modal-body"></div>
+    </div>
+  </div>
+
+  <script src="/app.js" defer></script>
+  <noscript>This tool requires JavaScript enabled.</noscript>
+  
+</body>
+</html>
+
+

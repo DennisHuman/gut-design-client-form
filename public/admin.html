@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mini Dashboard | GUT</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="logo">GUT Design</div>
+      <nav class="header-nav">
+        <a class="nav-link" href="/">Back</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <h1 class="title">Mini Dashboard</h1>
+    <p class="subtitle">Basic overview of collected submissions.</p>
+
+    <section>
+      <div id="summary" style="margin: 16px 0; font-weight: 600;">Loading…</div>
+      <div style="overflow-x: auto; border: 1px solid #111;">
+        <table id="table" style="width: 100%; border-collapse: collapse;">
+          <thead>
+            <tr>
+              <th style="text-align: left; border-bottom: 1px solid #111; padding: 8px;">Created</th>
+              <th style="text-align: left; border-bottom: 1px solid #111; padding: 8px;">Email</th>
+              <th style="text-align: left; border-bottom: 1px solid #111; padding: 8px;">Persona</th>
+              <th style="text-align: left; border-bottom: 1px solid #111; padding: 8px;">Answers (keys)</th>
+              <th style="text-align: left; border-bottom: 1px solid #111; padding: 8px;">Scores</th>
+            </tr>
+          </thead>
+          <tbody id="tbody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    async function load() {
+      const summary = document.getElementById('summary');
+      const tbody = document.getElementById('tbody');
+      try {
+        const res = await fetch('/api/submissions');
+        const data = await res.json();
+        summary.textContent = `Total submissions: ${data.count}`;
+        tbody.innerHTML = '';
+        (data.submissions || []).slice().reverse().forEach((s) => {
+          const tr = document.createElement('tr');
+          const created = document.createElement('td');
+          const email = document.createElement('td');
+          const answers = document.createElement('td');
+          const scores = document.createElement('td');
+          const persona = document.createElement('td');
+
+          created.style.padding = email.style.padding = persona.style.padding = answers.style.padding = scores.style.padding = '8px';
+          created.textContent = new Date(s.createdAt).toLocaleString();
+          email.textContent = s.email;
+          persona.textContent = (s.meta && s.meta.persona) ? s.meta.persona : (s.score && s.score.persona) ? s.score.persona : 'default';
+          answers.textContent = Object.keys(s.answers || {}).join(', ');
+          scores.textContent = formatScores(s.score);
+
+          tr.appendChild(created);
+          tr.appendChild(email);
+          tr.appendChild(persona);
+          tr.appendChild(answers);
+          tr.appendChild(scores);
+          tbody.appendChild(tr);
+        });
+      } catch (err) {
+        summary.textContent = 'Failed to load data.';
+      }
+    }
+    function formatScores(score) {
+      if (!score || !score.perSection) return '-';
+      const parts = [];
+      for (const [sid, v] of Object.entries(score.perSection)) {
+        if (v && typeof v.percent === 'number') {
+          parts.push(`${v.title}: ${Math.round(v.percent)}%`);
+        }
+      }
+      if (typeof score.overall === 'number') {
+        parts.push(`Overall: ${Math.round(score.overall)}%`);
+      }
+      return parts.join(' | ') || '-';
+    }
+    document.addEventListener('DOMContentLoaded', load);
+  </script>
+</body>
+</html>
+
+

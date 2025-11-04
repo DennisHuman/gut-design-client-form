@@ -1,0 +1,8 @@
+[
+  { "id": "default", "title": "General" },
+  { "id": "designer", "title": "Designer" },
+  { "id": "developer", "title": "Developer" },
+  { "id": "producer", "title": "Producer" }
+]
+
+
